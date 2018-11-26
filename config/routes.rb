@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :formers
+  resources :categories
   devise_for :users
   
   authenticated :user do

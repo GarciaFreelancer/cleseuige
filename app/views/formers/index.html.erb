@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Formers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @formers.each do |former| %>
+      <tr>
+        <td><%= former.name %></td>
+        <td><%= former.phone_number %></td>
+        <td><%= former.email %></td>
+        <td><%= former.description %></td>
+        <td><%= link_to 'Show', former %></td>
+        <td><%= link_to 'Edit', edit_former_path(former) %></td>
+        <td><%= link_to 'Destroy', former, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Former', new_former_path %>

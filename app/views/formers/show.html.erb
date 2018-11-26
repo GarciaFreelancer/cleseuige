@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @former.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @former.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @former.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @former.description %>
+</p>
+
+<%= link_to 'Edit', edit_former_path(@former) %> |
+<%= link_to 'Back', formers_path %>

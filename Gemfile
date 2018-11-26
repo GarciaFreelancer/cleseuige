@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 
-gem 'coffee-script-source', '1.8.0'
+gem 'coffee-script-source', '~> 1.12', '>= 1.12.2'
 
 #==========================================
 
