@@ -90,25 +90,17 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
   </div>
 </div>
 <div class="col hide-on-small-only m3 l2">
   <ul class="section table-of-contents">
     <h6 class="category">Categorias</h6>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#structure">Structure</a></li>
-    <li><a href="#initialization">Intialization</a></li>
-    <li><a href="#initialization">Intialization2</a></li>
-    <li><a href="#initialization">Intialization3</a></li>
+    <% @categories.each do |category| %> 
+      <li><a href="#introduction"><%= category.name %></a></li>
+    <% end %>
+    <%= will_paginate @categories %>
   </ul>
 </div>
 </div>
+
+<%= render 'shared/footer' %>

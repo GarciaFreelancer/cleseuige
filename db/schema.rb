@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_222737) do
+ActiveRecord::Schema.define(version: 2018_11_26_213456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,30 @@ ActiveRecord::Schema.define(version: 2018_11_25_222737) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "classcourses", force: :cascade do |t|
+    t.string "name"
+    t.string "period"
+    t.boolean "available"
+    t.bigint "course_id"
+    t.bigint "former_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_classcourses_on_course_id"
+    t.index ["former_id"], name: "index_classcourses_on_former_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.boolean "visible"
+    t.boolean "available"
+    t.bigint "category_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_courses_on_category_id"
+  end
+
   create_table "formers", force: :cascade do |t|
     t.string "name"
     t.string "phone_number"
@@ -28,6 +52,21 @@ ActiveRecord::Schema.define(version: 2018_11_25_222737) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "email"
+    t.string "literary_habilitation"
+    t.string "address"
+    t.bigint "user_id"
+    t.bigint "classcourse_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classcourse_id"], name: "index_subscriptions_on_classcourse_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,4 +83,9 @@ ActiveRecord::Schema.define(version: 2018_11_25_222737) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "classcourses", "courses"
+  add_foreign_key "classcourses", "formers"
+  add_foreign_key "courses", "categories"
+  add_foreign_key "subscriptions", "classcourses"
+  add_foreign_key "subscriptions", "users"
 end

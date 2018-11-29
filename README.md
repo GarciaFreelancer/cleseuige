@@ -2,6 +2,7 @@
 
 Presentation system and online registration of courses in CLESE UIGE
 
+Web url: https://cleseuige.herokuapp.com/
 
 Things you may want to cover:
 

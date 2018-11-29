@@ -25,6 +25,7 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 
 gem 'coffee-script-source', '~> 1.12', '>= 1.12.2'
+gem 'will_paginate'
 
 #==========================================
 

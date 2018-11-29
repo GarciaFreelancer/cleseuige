@@ -8,6 +8,10 @@
     $('.parallax').parallax();
   });
 
+  /* Scrollpy - Home Page menu category  */
   $(document).ready(function(){
     $('.scrollspy').scrollSpy();
   });
+
+  /* Dropdown */
+  $('.dropdown-trigger').dropdown();
