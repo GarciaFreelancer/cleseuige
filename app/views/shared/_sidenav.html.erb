@@ -1,7 +1,38 @@
 <ul id="slide-out" class="sidenav sidenav-fixed">
+    <div class="center-align">
+        <i class="large material-icons">landscape</i>
+    </div>
+    <li class="divider" tabindex="-1"></li>
     <li><a href="#!">First Sidebar Link</a></li>
     <li><a href="#!">Second Sidebar Link</a></li>
+
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="#!">First</a></li>
+        <li><a href="#!">Second</a></li>
+        <li><a href="#!">Third</a></li>
+        <li><a href="#!">Fourth</a></li>
+      </ul>
+
+
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">First</a></li>
+                <li><a href="#!">Second</a></li>
+                <li><a href="#!">Third</a></li>
+                <li><a href="#!">Fourth</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+
     <li><%= link_to 'Categorias de cursos', categories_path %></li>
+    <li><%= link_to 'Usuários' %></li>
     <li><%= link_to 'Cursos', courses_path %></li>
     <li><%= link_to 'Formadores', formers_path %></li>
     <li><%= link_to 'Turmas', classcourses_path %></li>

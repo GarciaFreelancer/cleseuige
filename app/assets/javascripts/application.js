@@ -15,7 +15,7 @@
 //= require activestorage
 
 //= require jquery
-//= require materialize-sprockets
+//= require materialize
 
 
 
