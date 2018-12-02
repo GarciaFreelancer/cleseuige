@@ -18,6 +18,10 @@
     padding-bottom: 2rem;
 }
 
+.img {
+    height: 14rem !important;
+}
+
 .custumNavbar{
     background-color: #ffffff !important;
     box-shadow: 0 1px 1px 0 rgba(100, 99, 99, 0.14), 0 1px 1px -1px rgba(110, 108, 108, 0.12), 0 1px 1px 0 rgba(150, 145, 145, 0.2) !important;
@@ -27,14 +31,14 @@
     height: 15rem !important;
 }
 
-.img{
-    height: 13rem !important;
-}
-
 .category {
     padding-left: 1rem;
 }
 
 .pagination a li.active {
     color: #fff;
+}
+
+.pagination a li {
+    padding: 0.5rem !important;
 }

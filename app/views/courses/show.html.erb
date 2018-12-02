@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @course.image.url(:medium) %>
+</p>
+
+
+<p>
   <strong>Name:</strong>
   <%= @course.name %>
 </p>
@@ -13,6 +18,11 @@
 <p>
   <strong>Available:</strong>
   <%= @course.available %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @course.price %>
 </p>
 
 <p>

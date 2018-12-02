@@ -24,72 +24,35 @@
     
 
   
-    <div class="col s12 m6 l6">
-      <div class="card">
-        <div class="card-image">
-          <%= image_tag 'curso-redes.jpg', class: 'img' %>
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+    <% @courses.each do |course| %>
+
+      <div class="col s12 m6 l6">
+        <div class="card">
+          <div class="card-image">
+            <%= image_tag course.image.url(:medium), class: 'img' %>
+            <span class="card-title"><%= course.name %></span>
+            <%= link_to 'add', course, class: 'btn-floating btn-small halfway-fab waves-effect waves-light red material-icons' %>
+          </div>
+          <div class="card-content">
+            <p><%= course.price %> Kz</p>
+            <p><%= course.description %></p>
+          </div>
         </div>
       </div>
-    </div>
+
+    <% end %>  
     
-
-    <div class="col s12 m6 l6">
-      <div class="card">
-        <div class="card-image">
-          <%= image_tag 'curso-redes.jpg', class: 'img' %>
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s12 m6 l6">
-      <div class="card">
-        <div class="card-image">
-          <%= image_tag 'curso-redes.jpg', class: 'img' %>
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s12 m6 l6">
-      <div class="card">
-        <div class="card-image">
-          <%= image_tag 'curso-redes.jpg', class: 'img' %>
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row mb2">
+    <div class="row">
       <div class="container">
         <div class="col s12 m12 l12">
-          <ul class="pagination center-align">
-            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-            <li class="active"><a href="#!">1</a></li>
-            <li class="waves-effect"><a href="#!">2</a></li>
-            <li class="waves-effect"><a href="#!">3</a></li>
-            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-          </ul>
+          <div class="center-align">
+            <%= will_paginate @courses %>
+          </div>
         </div>
       </div>
     </div>
+  
+    
 
 
   </div>
@@ -100,8 +63,8 @@
     <% @categories.each do |category| %> 
       <li><a href="#introduction"><%= category.name %></a></li>
     <% end %>
-    <%= will_paginate @categories %>
   </ul>
+  <%= will_paginate @categories %>
 </div>
 </div>
 

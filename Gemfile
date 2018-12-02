@@ -26,6 +26,8 @@ gem 'material_icons'
 
 gem 'coffee-script-source', '~> 1.12', '>= 1.12.2'
 gem 'will_paginate'
+gem 'will_paginate-materialize', '~> 0.1.2'
+gem 'paperclip', '~> 6.1'
 
 #==========================================
 
