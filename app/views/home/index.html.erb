@@ -30,12 +30,12 @@
         <div class="card">
           <div class="card-image">
             <%= image_tag course.image.url(:medium), class: 'img' %>
-            <span class="card-title"><%= course.name %></span>
+            <span class="card-title"><%= truncate(course.name, length: 30, separator: '') %></span>
             <%= link_to 'add', course, class: 'btn-floating btn-small halfway-fab waves-effect waves-light red material-icons' %>
           </div>
           <div class="card-content">
             <p><%= course.price %> Kz</p>
-            <p><%= course.description %></p>
+            <p><%= truncate(course.description, length: 40, separator: '') %></p>
           </div>
         </div>
       </div>
