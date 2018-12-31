@@ -16,6 +16,10 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/new
   def new
     @subscription = Subscription.new
+    @course = Course.find(params[:id])
+
+    @courseClass =  @course.classcourses
+
   end
 
   # GET /subscriptions/1/edit
@@ -26,10 +30,11 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(subscription_params)
+    @subscription.user_id = current_user.id
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
+        format.html { redirect_to @subscription, notice: 'Inscrição foi feita com sucesso.' }
         format.json { render :show, status: :created, location: @subscription }
       else
         format.html { render :new }

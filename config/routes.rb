@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/contact'
   get 'dashboard/index'
+  get 'cursos_por_categorias/:id', to: 'home#category_courses', as: 'courses_category'
+  get 'fazer_inscricao/:id', to: 'subscriptions#new', as: 'subscription_course'
   
   authenticated :user do
     root to: "dashboard#index", as: :authenticated_root

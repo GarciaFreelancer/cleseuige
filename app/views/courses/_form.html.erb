@@ -33,22 +33,16 @@
   </div>
 
 
-
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, class: "image-course" %>
   </div>
 
 
-  
-
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+    <%= form.collection_select(:category_id, Category.all, :id, :name, {include_blank: 'Selecione a categoria'}) %>
   </div>
-
-
-
 
 
   <div class="field">

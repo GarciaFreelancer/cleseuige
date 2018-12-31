@@ -21,8 +21,8 @@
         <td><%= classcourse.name %></td>
         <td><%= classcourse.period %></td>
         <td><%= classcourse.available %></td>
-        <td><%= classcourse.course %></td>
-        <td><%= classcourse.former %></td>
+        <td><%= classcourse.course.name %></td>
+        <td><%= classcourse.former.name %></td>
         <td><%= classcourse.description %></td>
         <td><%= link_to 'Show', classcourse %></td>
         <td><%= link_to 'Edit', edit_classcourse_path(classcourse) %></td>
